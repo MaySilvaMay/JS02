@@ -33,15 +33,26 @@ app.use(express.static('public'));
 app.use("/", categoriesController);
 app.use("/", articlesController);
 
+<<<<<<< HEAD
 
 app.get("/", (req, res)=>{
     Article.findAll().then(articles => {
         res.render("index", { articles: articles });
         });
     });
+=======
+app.get("/", (req, res)=>{
+        Article.findAll().then(articles =>{
+            res.render("index", { articles: articles});
+        });
+});
+>>>>>>> b0188d206c27b052bfa7768858918825873a69a7
 
 app.listen(8080, () =>{
     console.log("RODANDO"); 
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b0188d206c27b052bfa7768858918825873a69a7
