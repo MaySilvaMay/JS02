@@ -13,6 +13,7 @@
                     <input class="form-control" type="text" name="title" placeholder="Digite o título do Artigo"><br>
                     <textarea class="form-control" name="body" id="article" placeholder="Escreva o artigo aqui!"></textarea><br>
 
+                        
                         <label>Categoria</label>
                         <select name="category" class="form-control">
 
@@ -41,7 +42,7 @@
 
 <script>
     //mostrando ao tinymce qual é a testarea sera usada "id=article"
-    tinymce.init ({
+    tinymce.init({
         language: 'pt_BR',
         selector: "#article",
         plugins: [

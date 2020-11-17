@@ -1,3 +1,5 @@
+//Correto
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
@@ -32,26 +34,14 @@ app.use("/", categoriesController);
 app.use("/", articlesController);
 
 
-app.get("/",(req,res)=>{
-    res.render("index");
-});
+app.get("/", (req, res)=>{
+    Article.findAll().then(articles => {
+        res.render("index", { articles: articles });
+        });
+    });
 
 app.listen(8080, () =>{
     console.log("RODANDO"); 
 });
 
-app.get("/", (req, res)=>{
-    Article.findAll()({
-        order: [
-            ['id', 'DESC']
-        ]
-    }).then(articles => {
-        Category.findAll().then(categories =>{
-            res.render("index", { articles: articles, categories: categories});
-        });
-    });
-});
 
-app.listen(4000, () => {
-    console.log("SERVIDOR RODANDO");
-});
