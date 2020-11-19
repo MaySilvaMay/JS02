@@ -5,22 +5,31 @@
     <div class="container">
         <br>
         <div class="jumbotron">
-            <h1 class="display-4">Programação de Scripts</h1>
-            <p class ="lead">Este é o projeto JS02</p>
+            <h1 class="display-4">Bem vindo</h1>
+            <p class ="lead">Este é um simples blog feito pelos alunos da FATEC de Mogi Mirim</p>
             <hr class="my-4">
-            <p>Projeto desenvolvido pelos alunos da FATEC Mogi Mirim</p>
+            <p>descrição detalhado aqui!</p>
         </div>
+        <hr>
         <% articles.forEach(article =>{ %>
             <div class="card">
                 <div class="card-header">
                     <h2><%= article.title %></h2>
                 </div>
                 <div class="card-body">
-                    <a href="/<%= article.slug %>" class="btn btn-primary">Ler artigo</a>
+                    <a href="/<%= article.slug %>" class="btn btn-sucess">Ler artigo</a>
                 </div>
             </div>
             <br>
         <% }) %>
+
+        <div class="row">
+            <div class="col col-12">
+                <a style="float:right" href="/articles/page/2">Next >>></a>
+            </div>
+            <hr>
+        </div>
+        <hr>
     </div>
 </body>
 
